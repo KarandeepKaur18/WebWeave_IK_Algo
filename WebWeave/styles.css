@@ -1,0 +1,507 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+   
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-right: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.location {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 1s;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: white;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 1s;
+}
+
+/* Form Styling */
+.form-container {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    width: 350px; /* Adjusted to match the width in the image */
+}
+
+.form-container h3 {
+    font-size: 20px;
+    color: #d4a373;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-container label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px 0;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+    background: transparent;
+    outline: none;
+}
+
+.form-container input::placeholder {
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: #d4a373;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+    background: #c1905e;
+}
+
+/* Floor Plans Section */
+.floor-plans {
+    padding: 100px;
+    background: #f9f9f9;
+}
+
+.floor-plans h2 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.floor-plans h2 span {
+    color: #d4a373;
+}
+
+.tabs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: none;
+    background: #d4a373;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.tab.active {
+    background: #c1905e;
+}
+
+.tab:hover {
+    background: #c1905e;
+}
+
+.floor-plan-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.card-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card-content {
+    max-width: 500px;
+}
+
+.card-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.schedule-btn {
+    padding: 12px 40px;
+    background: #d4a373;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.schedule-btn:hover {
+    background: #c1905e;
+}
+
+/* Building Features Section */
+
+
+
+.building-features {
+    padding: 100px;
+    background: #d4a373;
+    position: relative;
+}
+
+.building-features h2 {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.features-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.features-cards {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    min-width: 100%;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.feature-card.active {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideRightFade 0.5s ease-in-out;
+}
+
+.feature-image img {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.feature-content {
+    max-width: 500px;
+}
+
+.feature-content h3 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.feature-content p {
+    font-size: 16px;
+    color: white;
+    line-height: 1.6;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.prev-btn, .next-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Section */
+.footer {
+    background: #1a1a1a;
+    padding: 30px 50px;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    width: 100px;
+}
+
+.footer-copyright p {
+    font-size: 14px;
+    color: #999;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.footer-links a:hover {
+    color: #d4a373;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-icons span {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-icons span:hover {
+    color: #d4a373;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRightFade {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-form {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.floor-plan-card.animate {
+    animation: slideRightFade 1s ease-in forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .form-container {
+        position: relative;
+        right: 0;
+        top: 0;
+        transform: none;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .floor-plans {
+        padding: 50px 20px;
+    }
+
+    .floor-plans h2 {
+        font-size: 36px;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .floor-plan-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .building-features {
+        padding: 50px 20px;
+    }
+
+    .building-features h2 {
+        font-size: 36px;
+    }
+
+    .feature-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .slider-controls {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .footer {
+        padding: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-icons {
+        justify-content: center;
+    }
+}
